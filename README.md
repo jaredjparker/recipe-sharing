@@ -1,27 +1,36 @@
-# RecipeSharing
+Recipe Sharing
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.4.
+MVP Features
+1. User Authentication
+   - Allow users to register and log in.
 
-## Development server
+2. Recipe Management
+   - Add Recipe:
+     - Form for users to input recipe name, ingredients, instructions, and servings.
+   - View Recipe:
+     - Display recipes with ingredients, instructions, and serving size.
+   - Edit Recipe:
+     - Allow users to modify their recipes.
+   - Delete Recipe:
+     - Option for users to remove their recipes.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+3. Recipe Scaling
+   - Adjust Servings:
+     - Input field to change the number of servings.
+     - Automatically adjust ingredient quantities based on the new number of servings.
+   - Update Instructions:
+     - Provide guidance on how the cooking process might need to be adjusted (basic instructions or tips).
 
-## Code scaffolding
+4. Unit Conversion for Ingredients
+   - Unit Conversion:
+     - Allow users to switch between Imperial and Metric units for ingredient measurements.
+   - Automatic Unit Conversion:
+     - Automatically convert ingredient quantities based on user preferences.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+5. Basic UI/UX
+   - Recipe List:
+     - Display a list or grid of recipes.
+   - Recipe Detail Page:
+     - Show recipe details and scaled ingredients.
+   - Form Pages:
+     - Simple forms for adding and editing recipes.
