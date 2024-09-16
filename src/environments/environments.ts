@@ -12,6 +12,7 @@ const { domain, clientId, authorizationParams: { audience }, apiUri, errorPath }
 
 export const environment = {
   production: false,
+  apiUrl: 'http://localhost:3000/api',
   auth: {
     domain,
     clientId,
