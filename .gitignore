@@ -38,6 +38,7 @@ yarn-error.log
 testem.log
 /typings
 /server/.env
+/server/dist
 
 # System files
 .DS_Store

@@ -1,16 +1,20 @@
-const express = require('express');
-const { MongoClient } = require('mongodb');
-const app = express();
-const port = process.env.PORT || 3000;
-const cors = require('cors');
+import express, { Express, Request, Response } from 'express';
+import { MongoClient, Db } from 'mongodb';
+import cors from 'cors';
+import dotenv from 'dotenv';
 
-const uri = process.env.MONGODB_URI || "mongodb://localhost:27017";
-const client = new MongoClient(uri);
+dotenv.config();
+
+const app: Express = express();
+const port: number = parseInt(process.env.PORT || '3000', 10);
+
+const uri: string = process.env.MONGODB_URI || "mongodb://localhost:27017";
+const client: MongoClient = new MongoClient(uri);
 
 app.use(cors());
 app.use(express.json());
 
-async function connectToMongo() {
+async function connectToMongo(): Promise<void> {
   try {
     await client.connect();
     console.log("Connected to MongoDB");
@@ -21,13 +25,13 @@ async function connectToMongo() {
 
 connectToMongo();
 
-app.get('/api', (req, res) => {
+app.get('/api', (req: Request, res: Response) => {
   res.json({ message: 'Welcome to the Recipe Sharing API' });
 });
 
-app.get('/api/recipes', async (req, res) => {
+app.get('/api/recipes', async (req: Request, res: Response) => {
   try {
-    const database = client.db('recipe_sharing');
+    const database: Db = client.db('recipe_sharing');
     const recipes = database.collection('recipes');
     const result = await recipes.find({}).toArray();
     res.json(result);
